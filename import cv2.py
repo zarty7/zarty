@@ -12,16 +12,16 @@ def detect_box(image):
         return [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
 
 def main():
-    image_paths = ["image1.png", "image2.png", "image1.jpeg", "image2.jpeg"]
+    image_paths = ["image1.png", "image2.png", "image1.jpeg", "image2.jpeg", "image3.jpeg"]
 
     for image_path in image_paths:
         image = cv2.imread(image_path)
         box = detect_box(image)
         if box:
-            print("Image:", image_path)
-            print("Box Coordinates:", box)
+            print("图像:", image_path)
+            print("方框坐标:", box)
         else:
-            print("No box detected in", image_path)
+            print("未检测到方框", image_path)
 
 if __name__ == "__main__":
     main()
